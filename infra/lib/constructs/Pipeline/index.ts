@@ -121,7 +121,7 @@ export class PipelineStack extends Construct {
                 'pnpm install',
                 'cd ../server',
                 'pnpm install',
-                'cd ../infrastructure',
+                'cd ../infra',
                 'pnpm install',
               ],
             },
@@ -130,7 +130,7 @@ export class PipelineStack extends Construct {
               commands: [
                 'cd ../web',
                 `${buildCommand}`,
-                'cd ../infrastructure',
+                'cd ../infra',
                 `${deployCommand}`,
               ],
             },

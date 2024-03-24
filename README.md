@@ -14,7 +14,7 @@
 
 ## Common Commands
 
-### Infrastructure
+### Infrastructure (infra)
 
 - `cdk deploy --profile cdk`
 - `cdk destroy --profile cdk`

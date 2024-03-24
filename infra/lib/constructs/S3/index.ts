@@ -65,7 +65,7 @@ export class S3 extends Construct {
     );
 
     const frontEndSubDomain =
-      process.env.NODE_ENV === 'Production'
+      process.env.NODE_ENV === 'production'
         ? config.frontend_subdomain
         : config.frontend_dev_subdomain;
 

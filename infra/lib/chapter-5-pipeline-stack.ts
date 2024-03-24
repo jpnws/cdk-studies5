@@ -20,11 +20,11 @@ export class Chapter5PipelineStack extends Stack {
 
     /* ---------- Constructs ---------- */
     new PipelineStack(this, 'Chapter5-Pipeline-Prod', {
-      environment: 'Production',
+      environment: 'production',
     });
 
     new PipelineStack(this, 'Chapter5-Pipeline-Dev', {
-      environment: 'Development',
+      environment: 'development',
     });
 
     /* ---------- Tags ---------- */

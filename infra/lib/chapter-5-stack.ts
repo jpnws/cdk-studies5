@@ -31,7 +31,7 @@ export class Chapter5Stack extends Stack {
     });
 
     const cidr =
-      process.env.NODE_ENV === 'Production' ? '10.0.0.0/16' : '10.1.0.0/16';
+      process.env.NODE_ENV === 'production' ? '10.0.0.0/16' : '10.1.0.0/16';
 
     this.vpc = new Vpc(this, `MyVPC-${process.env.NODE_ENV || ''}`, {
       cidr,
@@ -44,7 +44,7 @@ export class Chapter5Stack extends Stack {
         {
           cidrMask: 24,
           name: 'compute',
-          subnetType: SubnetType.PRIVATE_WITH_NAT,
+          subnetType: SubnetType.PRIVATE_WITH_EGRESS,
         },
         {
           cidrMask: 28,

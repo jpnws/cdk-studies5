@@ -111,7 +111,7 @@ export class DevelopmentPipeline extends Construct {
                 'pnpm install',
                 'cd ../server',
                 'pnpm install',
-                'cd ../infrastructure',
+                'cd ../infra',
                 'pnpm install',
               ],
             },
@@ -120,7 +120,7 @@ export class DevelopmentPipeline extends Construct {
               commands: [
                 'cd ../web',
                 'pnpm build:dev',
-                'cd ../infrastructure',
+                'cd ../infra',
                 'pnpm cdk:dev deploy',
               ],
             },

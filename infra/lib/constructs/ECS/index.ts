@@ -141,7 +141,7 @@ export class ECS extends Construct {
     });
 
     const backEndSubDomain =
-      process.env.NODE_ENV === 'Production'
+      process.env.NODE_ENV === 'production'
         ? config.backend_subdomain
         : config.backend_dev_subdomain;
 

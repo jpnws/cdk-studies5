@@ -111,7 +111,7 @@ export class ProductionPipeline extends Construct {
                 'pnpm install',
                 'cd ../server',
                 'pnpm install',
-                'cd ../infrastructure',
+                'cd ../infra',
                 'pnpm install',
               ],
             },
@@ -120,7 +120,7 @@ export class ProductionPipeline extends Construct {
               commands: [
                 'cd ../web',
                 'pnpm build:prod',
-                'cd ../infrastructure',
+                'cd ../infra',
                 'pnpm cdk deploy',
               ],
             },
