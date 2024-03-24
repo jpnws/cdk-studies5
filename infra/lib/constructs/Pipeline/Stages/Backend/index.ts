@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import { Chapter5Stack } from '../../../../chapter-5-stack';
 
 interface Props extends StageProps {
-  environment: 'Production' | 'Test' | 'Development';
+  environment: 'production' | 'test' | 'development';
 }
 
 export class BackendStage extends Stage {

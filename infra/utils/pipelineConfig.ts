@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 
 export const pipelineConfig = (env: string) => {
-  if (env === 'Production') {
+  if (env === 'production') {
     const { parsed } = dotenv.config({ path: '.env.production' });
 
     return {
