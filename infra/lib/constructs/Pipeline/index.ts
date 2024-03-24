@@ -243,6 +243,10 @@ export class PipelineStack extends Construct {
       `${props.environment}-Pipeline-SlackNotificationsTopic`,
     );
 
+    console.log('environment', props.environment);
+    console.log('workspaceId', workspaceId);
+    console.log('channelId', channelId);
+
     const slackConfig = new SlackChannelConfiguration(this, 'SlackChannel', {
       slackChannelConfigurationName: `${props.environment}-Pipeline-Slack-Channel-Config`,
       slackWorkspaceId: workspaceId || '',
