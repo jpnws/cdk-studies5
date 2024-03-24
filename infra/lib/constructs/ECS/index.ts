@@ -62,7 +62,7 @@ export class ECS extends Construct {
     this.cluster.addCapacity(
       `DefaultAutoScalingGroup-${process.env.NODE_ENV || ''}`,
       {
-        instanceType: new InstanceType('t2.micro'),
+        instanceType: new InstanceType('t3.micro'),
       },
     );
 
