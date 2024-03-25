@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ThemeProvider } from "styled-components";
 
-import { App } from './components/App';
+import { App } from "./components/App";
 
-import { light_theme } from './styles/theme';
-import { Global } from './styles/global';
+import { light_theme } from "./styles/theme";
+import { Global } from "./styles/global";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
@@ -18,5 +18,5 @@ root.render(
 
       <Global />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
