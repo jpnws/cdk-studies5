@@ -31,8 +31,7 @@ export const Main: React.FC = () => {
           method: "GET",
         });
         const response = await getResponse.json();
-        console.log(response);
-        setTodos(response.data.todos);
+        setTodos(response.todos);
       } catch (error) {
         console.error(error);
       }
@@ -55,8 +54,7 @@ export const Main: React.FC = () => {
         body: JSON.stringify({ todo: new_todo }),
       });
       const response = await getResponse.json();
-      console.log(response);
-      setTodos((current_todos) => [...current_todos, response.data.todo]);
+      setTodos((current_todos) => [...current_todos, response.todo]);
     } catch (error) {
       console.error(error);
     }
