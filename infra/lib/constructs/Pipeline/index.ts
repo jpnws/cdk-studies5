@@ -81,6 +81,7 @@ export class PipelineStack extends Construct {
               'runtime-versions': {
                 nodejs: '16',
               },
+              commands: ['npm install -g pnpm'],
             },
             pre_build: {
               'on-failure': 'ABORT',
