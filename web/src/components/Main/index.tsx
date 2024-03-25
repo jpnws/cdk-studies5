@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 import { Interfaces } from "../../../@types/interfaces";
 
@@ -27,7 +26,11 @@ export const Main: React.FC = () => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await axios.get(backend_url);
+      // const response = await axios.get(backend_url);
+      const getResponse = await fetch(backend_url, {
+        method: "GET",
+      });
+      const response = await getResponse.json();
 
       setTodos(response.data.todos);
     };
@@ -40,9 +43,19 @@ export const Main: React.FC = () => {
   }: {
     new_todo: Interfaces.Todo;
   }) => {
-    const response = await axios.post(backend_url, {
-      todo: new_todo,
+    // const response = await axios.post(backend_url, {
+    //   todo: new_todo,
+    // });
+
+    const getResponse = await fetch(backend_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ todo: new_todo }),
     });
+
+    const response = await getResponse.json();
 
     setTodos((current_todos) => [...current_todos, response.data.todo]);
   };
