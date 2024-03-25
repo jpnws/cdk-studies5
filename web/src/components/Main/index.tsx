@@ -26,13 +26,16 @@ export const Main: React.FC = () => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      // const response = await axios.get(backend_url);
-      const getResponse = await fetch(backend_url, {
-        method: "GET",
-      });
-      const response = await getResponse.json();
-
-      setTodos(response.data.todos);
+      try {
+        const getResponse = await fetch(backend_url, {
+          method: "GET",
+        });
+        const response = await getResponse.json();
+        console.log(response);
+        setTodos(response.data.todos);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchTodos();
@@ -43,21 +46,20 @@ export const Main: React.FC = () => {
   }: {
     new_todo: Interfaces.Todo;
   }) => {
-    // const response = await axios.post(backend_url, {
-    //   todo: new_todo,
-    // });
-
-    const getResponse = await fetch(backend_url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ todo: new_todo }),
-    });
-
-    const response = await getResponse.json();
-
-    setTodos((current_todos) => [...current_todos, response.data.todo]);
+    try {
+      const getResponse = await fetch(backend_url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ todo: new_todo }),
+      });
+      const response = await getResponse.json();
+      console.log(response);
+      setTodos((current_todos) => [...current_todos, response.data.todo]);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const to_complete = todos.filter((todo) => !todo.todo_completed).length;
